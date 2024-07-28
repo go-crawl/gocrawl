@@ -65,3 +65,5 @@ Colly - Elegant Scraping Framework for Gophers
 Cobra - A Commander for modern Go CLI interactions
 
 Inspired by Scrapy - An open source and collaborative web crawling framework for Python.
+
+Reference project layout: https://github.com/golang-standards/project-layout
