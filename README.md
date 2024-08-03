@@ -3,7 +3,7 @@
 GoCrawler is a web crawling framework written in Go, inspired by Scrapy. It uses the Colly library to handle web scraping and aims to provide a similar structure and command-line interface as Scrapy.
 
 ## Getting Started
-
+This is just an simple Getting Started tutorial, for more informations see our official documentation https://www.go-crawl.com
 ### Prerequisites
 
 - Go 1.20 or later
