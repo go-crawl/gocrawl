@@ -70,3 +70,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - Cobra - A Commander for modern Go CLI interactions
 
 - Viper - used for reading the configuration files
+
+## License
+
+Gocrawl is licensed under the [BSD License](./LICENSE).
+
+This project also includes code (mainly the strings of information, comments and structure in the generated web-scraping project) and documentation borrowed from Scrapy, which is licensed under the BSD License. Please refer to the Scrapy license included in this repository for more details.
