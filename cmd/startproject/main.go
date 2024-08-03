@@ -9,13 +9,20 @@ import (
 )
 
 var StartprojectCmd = &cobra.Command{
-	Use:   "startproject <project_name>",
+	Use:   "startproject <project_name> [project_dir]",
 	Short: "Create a new crawling project",
-	Args:  cobra.ExactArgs(1),
+	Args:  cobra.RangeArgs(1, 2),
 	Run: func(cmd *cobra.Command, args []string) {
 		projectName := args[0]
-		projectPath := filepath.Join(projectName)
-		subProjectPath := filepath.Join(projectName, projectName)
+		var projectDir string
+		if len(args) == 2 {
+			projectDir = args[1]
+		} else {
+			projectDir = projectName
+		}
+
+		projectPath := filepath.Join(projectDir)
+		subProjectPath := filepath.Join(projectDir, projectName)
 
 		// Create project directory
 		err := os.MkdirAll(subProjectPath, 0755)
@@ -31,7 +38,7 @@ var StartprojectCmd = &cobra.Command{
 		createFile(filepath.Join(subProjectPath, "pipelines.go"), generateGoFileContent("pipelines"))
 		createFile(filepath.Join(subProjectPath, "settings.go"), generateGoFileContent("settings"))
 
-		fmt.Println("Project", projectName, "created.")
+		fmt.Println("Project", projectName, "created at", projectPath)
 	},
 }
 
